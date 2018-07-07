@@ -6,7 +6,7 @@ Built from this project: https://github.com/markoshust/docker-magento
 3. Run `./bin/start`, to start Docker containers.
 4. Remove Magento `var` directory like: `rm -rf /src/var/`.
 5. Run `./bin/setup`, to setup Magento.
-6. Frontend: http://magento2.test:8080
+6. Frontend: http://magento2.test:8080, PHPmyAdmin: http://127.0.0.1:8001/
 7. Grab admin URL with `grep frontName src/app/etc/env.php`.
 
 
