@@ -6,7 +6,7 @@ docker-compose exec phpfpm /usr/local/bin/php ./bin/magento setup:install \
   --db-name=magento \
   --db-user=magento \
   --db-password=magento \
-  --base-url=http://magento2.test/ \
+  --base-url=http://magento2.test:8080/ \
   --admin-firstname=Admin \
   --admin-lastname=User \
   --admin-email=dummy@gmail.com \
