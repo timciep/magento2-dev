@@ -40,6 +40,15 @@ services:
     volumes:
       - dbdata:/var/lib/mysql
 
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+     - MYSQL_ROOT_PASSWORD=magento
+    ports:
+     - 8001:80
+    links:
+     - db:db
+
 volumes:
   dbdata:
   sockdata:
