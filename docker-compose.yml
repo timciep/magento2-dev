@@ -1,0 +1,45 @@
+# Mark Shust's Docker Configuration for Magento (https://github.com/markoshust/docker-magento)
+# Version 13.0.1
+
+version: "3"
+
+services:
+  app:
+    image: markoshust/magento-nginx:1.13-3
+    ports:
+      - 80:8000
+    links:
+      - db
+      - phpfpm
+    volumes: &appvolumes
+      - ./src:/var/www/html:delegated
+      - ~/.composer:/var/www/html/var/composer_home:delegated
+      - ~/.composer:/var/www/.composer:delegated
+      - sockdata:/sock
+
+  phpfpm:
+    image: markoshust/magento-php:7.1-fpm-3
+    links:
+      - db
+    volumes: *appvolumes
+
+  cron:
+    image: markoshust/magento-php:7.1-fpm-3
+    user: root
+    command: /usr/local/bin/cronstart
+    tty: true
+    links:
+      - db
+    volumes: *appvolumes
+
+  db:
+    image: percona:5.7
+    ports:
+      - 3306:3306
+    env_file: env/db.env
+    volumes:
+      - dbdata:/var/lib/mysql
+
+volumes:
+  dbdata:
+  sockdata:
