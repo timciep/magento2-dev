@@ -144,6 +144,11 @@ return [
     'Magento_WishlistSampleData' => 1,
     'Shopial_Facebook' => 1,
     'Temando_Shipping' => 1,
+    'Unit1_Classlogger' => 1,
+    'Unit1_Clicommand' => 1,
+    'Unit1_Eventlogger' => 1,
+    'Unit1_Loginbyfacebook' => 1,
+    'Unit1_Mymodule' => 1,
     'Vertex_Tax' => 1
   ]
 ];
