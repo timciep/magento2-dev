@@ -148,7 +148,8 @@ return [
     'Unit1_Clicommand' => 1,
     'Unit1_Eventlogger' => 1,
     'Unit1_Loginbyfacebook' => 1,
-    'Unit1_Mymodule' => 1,
+    'Unit2_Pageexample' => 1,
+    'Unit3_Subscribe' => 1,
     'Vertex_Tax' => 1
   ]
 ];
