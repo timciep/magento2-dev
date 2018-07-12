@@ -149,7 +149,10 @@ return [
     'Unit1_Eventlogger' => 1,
     'Unit1_Loginbyfacebook' => 1,
     'Unit2_Pageexample' => 1,
+    'Unit3_Layoutblock' => 1,
     'Unit3_Subscribe' => 1,
+    'Unit3_Textblock' => 1,
+    'Unit4_Setupscripts' => 1,
     'Vertex_Tax' => 1
   ]
 ];
