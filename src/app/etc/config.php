@@ -153,6 +153,8 @@ return [
     'Unit3_Subscribe' => 1,
     'Unit3_Textblock' => 1,
     'Unit4_Setupscripts' => 1,
+    'Unit5_Admintest' => 1,
+    'Unit5_Systemconfig' => 1,
     'Vertex_Tax' => 1
   ]
 ];
