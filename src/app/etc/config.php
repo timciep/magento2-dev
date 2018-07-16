@@ -155,6 +155,7 @@ return [
     'Unit4_Setupscripts' => 1,
     'Unit5_Admintest' => 1,
     'Unit5_Systemconfig' => 1,
+    'Unit6_Materials' => 1,
     'Vertex_Tax' => 1
   ]
 ];
