@@ -1,5 +1,7 @@
 #!/bin/bash
-./bin/cli chmod u+x bin/magento
+./bin/cliroot chown -R app:app ./*
+./bin/cliroot chown -R app:app .
+./bin/cliroot chmod u+x bin/magento
 
 docker-compose exec phpfpm /usr/local/bin/php ./bin/magento setup:install \
   --db-host=db \
