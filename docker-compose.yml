@@ -7,7 +7,7 @@ services:
   app:
     image: markoshust/magento-nginx:1.13-3
     ports:
-      - 8080:8000
+      - ${FRONTEND_PORT}:8000
     links:
       - db
       - phpfpm
@@ -35,7 +35,7 @@ services:
   db:
     image: percona:5.7
     ports:
-      - 8002:3306
+      - ${MYSQL_PORT}:3306
     env_file: env/db.env
     volumes:
       - dbdata:/var/lib/mysql
@@ -45,7 +45,7 @@ services:
     environment:
      - MYSQL_ROOT_PASSWORD=magento
     ports:
-     - 8001:80
+     - ${PHPMYADMIN_PORT}:80
     links:
      - db:db
 

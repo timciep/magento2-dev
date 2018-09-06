@@ -2,6 +2,7 @@
 ./bin/cliroot chown -R app:app ./
 ./bin/cliroot chown app:app .
 ./bin/cliroot chmod u+x bin/magento
+./bin/cliroot rm -rf var/
 
 ./bin/cli composer install
 
