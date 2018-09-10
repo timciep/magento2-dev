@@ -1,17 +1,25 @@
 #!/bin/bash
-./bin/cli chmod u+x bin/magento
+
+. .env
+
+./bin/cliroot chown -R app:app ./
+./bin/cliroot chown app:app .
+./bin/cliroot chmod u+x bin/magento
+./bin/cliroot rm -rf var/
+
+./bin/cli composer install
 
 docker-compose exec phpfpm /usr/local/bin/php ./bin/magento setup:install \
   --db-host=db \
   --db-name=magento \
   --db-user=magento \
   --db-password=magento \
-  --base-url=http://magento2.test:8080/ \
+  --base-url="$BASEURL":"$FRONTEND_PORT"/ \
   --admin-firstname=Admin \
   --admin-lastname=User \
   --admin-email=dummy@gmail.com \
   --admin-user=magento2 \
-  --admin-password=magento2 \
+  --admin-password=magento2pass \
   --language=en_US \
   --currency=USD \
   --timezone=America/New_York \

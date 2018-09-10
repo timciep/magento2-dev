@@ -2,12 +2,13 @@ Built from this project: https://github.com/markoshust/docker-magento
 
 ## Setup
 1. Clone this repo.
-2. Create `/etc/hosts` entry like: `127.0.0.1 magento2.test`.
-3. Run `./bin/start`, to start Docker containers.
-4. Remove Magento `var` directory like: `rm -rf /src/var/`.
-5. Run `./bin/setup`, to setup Magento.
-6. Frontend: http://magento2.test:8080, PHPmyAdmin: http://127.0.0.1:8001/
-7. Grab admin URL with `grep frontName src/app/etc/env.php`.
+1. Run `./bin/start`, to start Docker containers.
+1. Run `cp .env.example .env`, then edit `.env` with you preferred settings.
+1. Run `./bin/setup`, to setup Magento.
+1. Frontend: [your-base-url]:[your-web-port], PHPmyAdmin: [your-base-url]:[your-phpmyadmin-port]/
+1. Grab admin URL with `grep frontName src/app/etc/env.php`.
+  * Admin user:  `magento2`
+  * Admin password:  `magento2pass`
 
 
 
@@ -21,7 +22,8 @@ Built from this project: https://github.com/markoshust/docker-magento
 - `./bin/fixperms`: This will fix filesystem ownerships and permissions within Docker.
 - `./bin/initloopback`: Setup your ip loopback for proper Docker ip resolution.
 - `./bin/magento`: Run the Magento CLI. Ex: `./bin/magento cache:flush`
-- `./bin/root`: Run any CLI command as root without going into the bash prompt. Ex `./bin/root apt-get install nano`
+- `./bin/cliroot`: Run any CLI command as root without going into the bash prompt. Ex `./bin/cliroot apt-get install nano`
+- `./bin/bashroot`: Drop into the bash prompt of `phpfpm` as root.
 - `./bin/setup`: Run the Magento setup process to install Magento from the source code.
 - `./bin/start`: Start the Docker Compose process and your app. Ctrl+C to stop the process.
 - `./bin/xdebug`: Disable or enable Xdebug. Ex. `./bin/xdebug enable`
