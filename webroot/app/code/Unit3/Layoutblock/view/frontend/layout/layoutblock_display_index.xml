@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>My Custom Layout Page</title>
+    </head>
+    <body>
+        <referenceContainer name="content.top">
+            <block class="Unit3\Layoutblock\Block\Layoutblock" name="unit3.layout" as="layout.unit3" before="-" template="Unit3_Layoutblock::myblock.phtml">
+                <arguments>
+                    <argument name="viewModel" xsi:type="object">Unit3\Layoutblock\ViewModel\Myviewmodel</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>
